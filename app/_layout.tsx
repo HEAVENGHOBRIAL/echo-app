@@ -78,6 +78,7 @@ function RootNavigator() {
           <Stack.Screen name="admin/index" options={{ title: 'Echo — Admin' }} />
           <Stack.Screen name="admin/deck/[id]" options={{ title: 'Echo — Admin' }} />
           <Stack.Screen name="admin/card/[id]" options={{ title: 'Echo — Admin' }} />
+          <Stack.Screen name="admin/challenge/[levelId]" options={{ title: 'Echo — Admin' }} />
         </Stack.Protected>
 
         {/* Pas encore entrée dans l'app : onboarding */}
