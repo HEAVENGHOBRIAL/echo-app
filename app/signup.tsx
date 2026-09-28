@@ -172,6 +172,9 @@ export default function Signup() {
         }}
         error={termsError}
       />
+      <View style={styles.termsLink}>
+        <TextLink label={t.terms.read} onPress={() => router.push('/terms')} />
+      </View>
 
       <View style={styles.spacer} />
 
@@ -193,6 +196,7 @@ const useStyles = makeStyles((c) => ({
   title: { ...typography.h1, color: c.text.primary },
   subtitle: { ...typography.body, color: c.text.secondary },
   spacer: { flexGrow: 1, minHeight: spacing.md },
+  termsLink: { alignItems: 'flex-start', marginTop: -spacing.sm },
   footer: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', columnGap: spacing.xs },
   footerText: { ...typography.body, color: c.text.secondary },
 }));

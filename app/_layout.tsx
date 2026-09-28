@@ -85,6 +85,9 @@ function RootNavigator() {
           <Stack.Screen name="index" options={{ title: 'Echo' }} />
         </Stack.Protected>
 
+        {/* Conditions d'utilisation : accessibles à tout le monde */}
+        <Stack.Screen name="terms" options={{ title: 'Echo' }} />
+
         {/* Connexion / inscription : accessibles tant qu'on n'est pas connectée (même en invitée) */}
         <Stack.Protected guard={!signedIn}>
           <Stack.Screen name="login" options={{ title: 'Echo' }} />

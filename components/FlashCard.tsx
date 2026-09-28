@@ -5,7 +5,7 @@ import { pick, useLang } from '@/lib/i18n';
 import { makeStyles } from '@/lib/theme';
 import { trackColor } from '@/lib/trackColors';
 import type { ReviewCard } from '@/lib/types';
-import { fonts, radius, spacing, typography } from '@/theme';
+import { codeFont, fonts, radius, spacing, typography } from '@/theme';
 
 type Props = {
   card: ReviewCard;
@@ -110,6 +110,6 @@ const useStyles = makeStyles((c) => ({
   notion: { ...typography.display, color: c.brand.primary, textAlign: 'center' },
   code: { width: '100%', flexGrow: 0, backgroundColor: c.code.bg, borderRadius: radius.md },
   codeContent: { paddingHorizontal: spacing.md, paddingVertical: 14 },
-  codeText: { fontFamily: fonts.code, fontSize: 14, lineHeight: 20, color: c.code.text },
+  codeText: { ...codeFont, fontSize: 14, lineHeight: 20, color: c.code.text },
   explanation: { ...typography.body, color: c.text.secondary, textAlign: 'center' },
 }));

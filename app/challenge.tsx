@@ -17,7 +17,7 @@ import { getGuestCompleted, recordCompletion } from '@/lib/sync';
 import { makeStyles } from '@/lib/theme';
 import { trackColor } from '@/lib/trackColors';
 import type { Challenge, Deck, Level } from '@/lib/types';
-import { fonts, radius, spacing, typography } from '@/theme';
+import { codeFont, fonts, radius, spacing, typography } from '@/theme';
 
 type PlayCard = { id: number; text: string };
 
@@ -349,7 +349,7 @@ const useStyles = makeStyles((c) => ({
     backgroundColor: c.code.bg,
   },
   boardDone: { borderWidth: 2, borderColor: c.feedback.success },
-  fixedLine: { fontFamily: fonts.code, fontSize: 14, lineHeight: 20, color: c.text.muted },
+  fixedLine: { ...codeFont, fontSize: 14, lineHeight: 20, color: c.text.muted },
   emptyBoard: { ...typography.bodySmall, color: c.text.muted, fontStyle: 'italic', paddingVertical: spacing.sm },
   line: {
     flexDirection: 'row',
@@ -362,8 +362,8 @@ const useStyles = makeStyles((c) => ({
   },
   lineIndented: { marginLeft: spacing.md },
   linePressed: { backgroundColor: 'rgba(255,255,255,0.18)' },
-  lineNumber: { fontFamily: fonts.code, fontSize: 12, color: c.text.muted, minWidth: 14 },
-  lineText: { fontFamily: fonts.code, fontSize: 14, lineHeight: 20, color: c.code.text, flexShrink: 1 },
+  lineNumber: { ...codeFont, fontSize: 12, color: c.text.muted, minWidth: 14 },
+  lineText: { ...codeFont, fontSize: 14, lineHeight: 20, color: c.code.text, flexShrink: 1 },
 
   hand: { flexDirection: 'row', flexWrap: 'wrap', gap: 10 },
   playCard: {
@@ -380,7 +380,7 @@ const useStyles = makeStyles((c) => ({
     boxShadow: '0px 4px 10px rgba(15, 26, 46, 0.08)',
   },
   playCardPressed: { backgroundColor: c.bg.subtle, transform: [{ translateY: 2 }] },
-  playCardText: { fontFamily: fonts.code, fontSize: 14, lineHeight: 20, color: c.text.primary },
+  playCardText: { ...codeFont, fontSize: 14, lineHeight: 20, color: c.text.primary },
 
   actions: { flexDirection: 'row', gap: spacing.sm, marginTop: spacing.sm },
 
@@ -392,5 +392,5 @@ const useStyles = makeStyles((c) => ({
     borderColor: c.border,
     backgroundColor: c.bg.surface,
   },
-  solutionCode: { fontFamily: fonts.code, fontSize: 14, lineHeight: 20, color: c.text.primary },
+  solutionCode: { ...codeFont, fontSize: 14, lineHeight: 20, color: c.text.primary },
 }));

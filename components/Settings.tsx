@@ -1,6 +1,8 @@
 // Réglages : langue (FR / EN) et thème (Auto / Clair / Sombre)
+import { router } from 'expo-router';
 import { Pressable, Text, View } from 'react-native';
 import { focusStyles, type PressState } from '@/components/focus';
+import { TextLink } from '@/components/TextLink';
 import { useLang, type Lang } from '@/lib/i18n';
 import { makeStyles, useTheme, type ThemePref } from '@/lib/theme';
 import { radius, spacing, typography } from '@/theme';
@@ -35,6 +37,7 @@ export function SettingsPanel() {
           { value: 'dark', label: t.settings.themeDark },
         ]}
       />
+      <TextLink label={t.terms.read} onPress={() => router.push('/terms')} />
     </View>
   );
 }

@@ -21,7 +21,7 @@ import { pick, useLang, useT } from '@/lib/i18n';
 import { makeStyles } from '@/lib/theme';
 import type { Card } from '@/lib/types';
 import { useData } from '@/lib/useData';
-import { fonts, spacing, typography } from '@/theme';
+import { codeFont, fonts, spacing, typography } from '@/theme';
 
 export default function AdminDeck() {
   const styles = useStyles();
@@ -245,7 +245,7 @@ const useStyles = makeStyles((c) => ({
   order: { ...typography.label, color: c.text.secondary, minWidth: 20 },
   cardInfo: { flex: 1, gap: 2 },
   front: { ...typography.h3, color: c.text.primary },
-  snippet: { fontFamily: fonts.code, fontSize: 12, color: c.text.secondary },
+  snippet: { ...codeFont, fontSize: 12, color: c.text.secondary },
   arrows: { flexDirection: 'row' },
   arrow: { width: 44, height: 44, alignItems: 'center', justifyContent: 'center', borderRadius: 22 },
   arrowPressed: { backgroundColor: c.bg.subtle },
