@@ -16,7 +16,7 @@ import { SectionHeader } from '@/components/SectionHeader';
 import { LoadError, Loading } from '@/components/StateViews';
 import { TextField } from '@/components/TextField';
 import { adminErrorMessage, createDeck, deleteDeck, getAdminCards, swapCards, updateDeck } from '@/lib/admin';
-import { getLevel } from '@/lib/api';
+import { getChallenge, getLevel } from '@/lib/api';
 import { pick, useLang, useT } from '@/lib/i18n';
 import { makeStyles } from '@/lib/theme';
 import type { Card } from '@/lib/types';
@@ -46,9 +46,9 @@ function DeckEditor({ id }: { id: number | null }) {
   const { t, lang } = useLang();
   const { track } = useLocalSearchParams<{ track?: string }>();
   const { data, error, loading, reload } = useData(async () => {
-    if (!id) return { level: null, cards: [] as Card[] };
-    const [level, cards] = await Promise.all([getLevel(id), getAdminCards(id)]);
-    return { level, cards };
+    if (!id) return { level: null, cards: [] as Card[], challenge: null };
+    const [level, cards, challenge] = await Promise.all([getLevel(id), getAdminCards(id), getChallenge(id)]);
+    return { level, cards, challenge };
   }, [id]);
 
   const [title, setTitle] = useState('');
@@ -140,6 +140,16 @@ function DeckEditor({ id }: { id: number | null }) {
 
       {id && (
         <>
+          <SectionHeader title={`⚡ ${t.admin.challengeSection}`} />
+          <Text style={styles.meta}>
+            {data.challenge ? t.admin.challengeSet(data.challenge.pieces.length) : t.admin.challengeNone}
+          </Text>
+          <Button
+            label={data.challenge ? t.admin.challengeEdit : t.admin.challengeCreate}
+            variant="secondary"
+            onPress={() => router.push(`/admin/challenge/${id}`)}
+          />
+
           <SectionHeader title={t.admin.cardsCount(data.cards.length)} />
           <Button label={t.admin.addCard} variant="secondary" onPress={() => router.push(`/admin/card/new?deck=${id}`)} />
 

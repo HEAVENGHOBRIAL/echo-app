@@ -114,6 +114,33 @@ export async function swapCards(a: Card, b: Card) {
   if (r2.error) throw r2.error;
 }
 
+// ---------- Défi final ----------
+
+export type ChallengeInput = {
+  prompt_fr: string;
+  prompt_en: string | null;
+  hint_fr: string | null;
+  hint_en: string | null;
+  code_before: string | null;
+  code_after: string | null;
+  pieces: string[];
+  distractors: string[];
+  ordered: boolean;
+};
+
+// Un seul défi par deck : on crée ou on remplace (level_id est unique)
+export async function saveChallenge(levelId: number, input: ChallengeInput) {
+  const { error } = await supabase
+    .from('level_challenges')
+    .upsert({ level_id: levelId, ...input }, { onConflict: 'level_id' });
+  if (error) throw error;
+}
+
+export async function deleteChallenge(levelId: number) {
+  const { error } = await supabase.from('level_challenges').delete().eq('level_id', levelId);
+  if (error) throw error;
+}
+
 // Message lisible pour les erreurs Supabase les plus courantes
 export function adminErrorMessage(error: unknown, t: Dict) {
   const e = error as { code?: string; message?: string };
