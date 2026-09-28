@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
+    <title>Echo</title>
+    <meta name="description" content="Révise le dev, une carte à la fois : PHP, SQL, HTML, CSS, JavaScript et React en flashcards." />
+
+    <!-- PWA : installation sur l'écran d'accueil -->
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#1B2A4A" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <!-- iPhone / iPad -->
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Echo" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+
+    <!-- The `react-native-web` recommended style reset: https://necolas.github.io/react-native-web/docs/setup/#root-element -->
+    <style id="expo-reset">
+      /* These styles make the body full-height */
+      html,
+      body {
+        height: 100%;
+      }
+      /* These styles disable body scrolling if you are using <ScrollView> */
+      body {
+        overflow: hidden;
+        /* Pas de flash blanc au démarrage : couleur de fond de l'app */
+        background-color: #f4f6fa;
+      }
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #0b1220;
+        }
+      }
+      /* These styles make the root element full-height */
+      #root {
+        display: flex;
+        height: 100%;
+        flex: 1;
+      }
+    </style>
+  </head>
+
+  <body>
+    <noscript>Active JavaScript pour utiliser Echo. / Enable JavaScript to use Echo.</noscript>
+    <div id="root"></div>
+
+    <script>
+      // Service worker : seulement dans la version en ligne (pas pendant le développement,
+      // pour ne pas garder d'anciens fichiers en cache pendant qu'on code)
+      window.addEventListener('load', function () {
+        var isBuild = !!document.querySelector('script[src*="/_expo/static/"]');
+        if (!('serviceWorker' in navigator) || !isBuild) return;
+        navigator.serviceWorker.register('/sw.js').catch(function () {});
+        // Envoie au service worker les fichiers déjà chargés (JS, polices, images) pour le hors ligne
+        function sendLoadedFiles() {
+          navigator.serviceWorker.ready.then(function (reg) {
+            var urls = performance.getEntriesByType('resource').map(function (e) { return e.name; });
+            urls.push(location.origin + '/');
+            if (reg.active) reg.active.postMessage({ type: 'CACHE_URLS', urls: urls });
+          });
+        }
+        sendLoadedFiles();
+        // 2e envoi : les polices sont chargées un peu après le JS
+        setTimeout(sendLoadedFiles, 6000);
+      });
+    </script>
+  </body>
+</html>

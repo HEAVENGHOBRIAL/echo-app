@@ -34,8 +34,9 @@ function MemberHome() {
     const [tracks, profile, streak, week] = await Promise.all([
       getTracksOverview(true),
       getProfile(userId),
-      getStreak(),
-      getWeekActivity(),
+      // La série vient d'une fonction Supabase : hors ligne, on affiche 0 plutôt qu'une erreur
+      getStreak().catch(() => 0),
+      getWeekActivity().catch(() => [false, false, false, false, false, false, false]),
     ]);
     return { tracks, profile, streak, week };
   }, [userId]);

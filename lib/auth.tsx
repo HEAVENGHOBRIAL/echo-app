@@ -61,6 +61,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     // Quitter le mode invité = on efface la progression de la démo
     clearGuestAnswers();
     setIsGuest(false);
+    // Web : on efface les données gardées pour le hors ligne (voir public/sw.js)
+    if (typeof caches !== 'undefined') await caches.delete('echo-data').catch(() => false);
     await supabase.auth.signOut();
   }
 
