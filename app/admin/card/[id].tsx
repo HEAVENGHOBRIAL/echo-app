@@ -18,7 +18,7 @@ import { getLevel, getTracksOverview } from '@/lib/api';
 import { pick, useLang, useT } from '@/lib/i18n';
 import { makeStyles } from '@/lib/theme';
 import { useData } from '@/lib/useData';
-import { fonts, layout, spacing, typography } from '@/theme';
+import { codeFont, fonts, layout, spacing, typography } from '@/theme';
 
 export default function AdminCard() {
   const styles = useStyles();
@@ -219,7 +219,7 @@ const useStyles = makeStyles((c) => ({
   form: { flex: 1, gap: spacing.md },
   preview: { flex: 1, gap: spacing.sm },
   previewTitle: { ...typography.h2, color: c.text.primary },
-  codeInput: { minHeight: 140, fontFamily: fonts.code, fontSize: 14, textAlignVertical: 'top' },
+  codeInput: { minHeight: 140, ...codeFont, fontSize: 14, textAlignVertical: 'top' },
   textArea: { minHeight: 100, textAlignVertical: 'top' },
   danger: { marginTop: spacing.lg },
 }));

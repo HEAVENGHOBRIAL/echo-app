@@ -85,6 +85,13 @@ export const fonts = {
   code: 'JetBrainsMono_400Regular',
 };
 
+// Police du code SANS ligatures : JetBrains Mono transforme ">=" en "≥" ou "=>" en flèche,
+// ce qui perturbe quand on apprend à écrire du code. On garde les vrais caractères.
+export const codeFont = {
+  fontFamily: fonts.code,
+  fontVariant: ['no-contextual', 'no-common-ligatures'],
+} satisfies TextStyle;
+
 // Styles de texte du Figma (Display, H1, H2, H3, Body, Label, Body small, Caption, Code)
 export const typography = {
   display: { fontFamily: fonts.display, fontSize: 34, lineHeight: 40 },
@@ -95,5 +102,5 @@ export const typography = {
   label: { fontFamily: fonts.semibold, fontSize: 15, lineHeight: 20 },
   bodySmall: { fontFamily: fonts.body, fontSize: 13, lineHeight: 18 },
   caption: { fontFamily: fonts.medium, fontSize: 12, lineHeight: 16 },
-  code: { fontFamily: fonts.code, fontSize: 14, lineHeight: 20 },
+  code: { ...codeFont, fontSize: 14, lineHeight: 20 },
 } satisfies Record<string, TextStyle>;

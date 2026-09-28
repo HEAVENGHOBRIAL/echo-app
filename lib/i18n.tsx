@@ -52,6 +52,22 @@ const fr = {
     skipHint: 'Passe l’introduction et essaie l’app sans compte',
     title: 'Révise le dev, une carte à la fois.',
     subtitle: 'PHP, SQL, HTML, CSS, JavaScript, React : 3 parcours pour ancrer les bases, à ton rythme.',
+    slides: [
+      {
+        title: 'Révise le dev, une carte à la fois.',
+        subtitle: 'PHP, SQL, HTML, CSS, JavaScript, React : 3 parcours pour ancrer les bases, à ton rythme.',
+      },
+      {
+        title: 'Retourne la carte, sois honnête.',
+        subtitle: 'À revoir, Presque ou Je savais : chaque carte revient pile au bon moment pour que ça reste.',
+      },
+      {
+        title: 'Relève le défi, débloque la suite.',
+        subtitle: 'À la fin de chaque deck, construis un vrai bout de code avec tes cartes pour passer au niveau suivant.',
+      },
+    ],
+    next: 'Suivant',
+    slideLabel: (i: number, n: number) => `Écran ${i} sur ${n}`,
     createAccount: 'Créer un compte',
     tryGuest: 'Essayer sans compte',
     tryGuestHint: 'Accède à tous les parcours, sans sauvegarde',
@@ -99,6 +115,37 @@ const fr = {
     doneMsg: 'C’est tout bon, tu es connectée avec ton nouveau mot de passe.',
     goHome: 'Aller à l’accueil',
     failTitle: 'Modification impossible',
+  },
+  terms: {
+    title: 'Conditions d’utilisation',
+    read: 'Lire les conditions d’utilisation',
+    updated: 'Dernière mise à jour : septembre 2026',
+    sections: [
+      {
+        title: 'Le service',
+        body: 'Echo est une application gratuite de révision pour apprendre les bases du développement web (PHP, SQL, HTML, CSS, JavaScript, React) avec des flashcards. Elle a été réalisée dans le cadre d’un projet étudiant (BUT MMI).',
+      },
+      {
+        title: 'Ton compte',
+        body: 'Pour créer un compte, il faut un prénom, une adresse email et un mot de passe. Tu es responsable de garder ton mot de passe secret. Le mode invité permet d’utiliser l’app sans compte : dans ce cas, rien n’est sauvegardé.',
+      },
+      {
+        title: 'Tes données',
+        body: 'On enregistre seulement ce qui sert à l’app : ton prénom, ton email, tes réponses aux cartes, tes sessions de révision et les défis réussis. Elles sont hébergées par Supabase (serveurs dans l’Union européenne) et ne sont ni vendues ni partagées. Tu peux demander la suppression de ton compte et de tes données à tout moment par email.',
+      },
+      {
+        title: 'Sur ton appareil',
+        body: 'L’app garde sur ton appareil ta session de connexion, ta langue, ton thème et, pour le hors ligne, les dernières cartes consultées. Il n’y a ni publicité ni traceur.',
+      },
+      {
+        title: 'Le contenu',
+        body: 'Les cartes sont rédigées avec soin mais peuvent contenir des erreurs : elles servent à réviser, pas de documentation officielle. Tu peux signaler une erreur par email.',
+      },
+      {
+        title: 'Contact',
+        body: 'Pour toute question ou demande sur tes données : heavenlucagabriel@gmail.com',
+      },
+    ],
   },
   signup: {
     title: 'Crée ton compte',
@@ -409,6 +456,22 @@ const en: Dict = {
     skipHint: 'Skip the intro and try the app without an account',
     title: 'Learn to code, one card at a time.',
     subtitle: 'PHP, SQL, HTML, CSS, JavaScript, React: 3 tracks to master the basics, at your own pace.',
+    slides: [
+      {
+        title: 'Learn to code, one card at a time.',
+        subtitle: 'PHP, SQL, HTML, CSS, JavaScript, React: 3 tracks to master the basics, at your own pace.',
+      },
+      {
+        title: 'Flip the card, be honest.',
+        subtitle: 'Again, Almost or I knew it: each card comes back right on time so it sticks.',
+      },
+      {
+        title: 'Take the challenge, unlock what’s next.',
+        subtitle: 'At the end of each deck, build real code with your cards to move on to the next level.',
+      },
+    ],
+    next: 'Next',
+    slideLabel: (i, n) => `Screen ${i} of ${n}`,
     createAccount: 'Create an account',
     tryGuest: 'Try without an account',
     tryGuestHint: 'Access every track, nothing is saved',
@@ -456,6 +519,37 @@ const en: Dict = {
     doneMsg: 'All set, you’re signed in with your new password.',
     goHome: 'Go home',
     failTitle: 'Couldn’t change it',
+  },
+  terms: {
+    title: 'Terms of use',
+    read: 'Read the terms of use',
+    updated: 'Last updated: September 2026',
+    sections: [
+      {
+        title: 'The service',
+        body: 'Echo is a free study app to learn the basics of web development (PHP, SQL, HTML, CSS, JavaScript, React) with flashcards. It was made as a student project (BUT MMI).',
+      },
+      {
+        title: 'Your account',
+        body: 'To create an account you need a first name, an email address and a password. You are responsible for keeping your password secret. Guest mode lets you use the app without an account: in that case nothing is saved.',
+      },
+      {
+        title: 'Your data',
+        body: 'We only store what the app needs: your first name, your email, your answers to the cards, your review sessions and the challenges you passed. It is hosted by Supabase (servers in the European Union) and is never sold or shared. You can ask for your account and data to be deleted at any time by email.',
+      },
+      {
+        title: 'On your device',
+        body: 'The app keeps on your device your sign-in session, your language, your theme and, for offline use, the last cards you opened. There are no ads and no trackers.',
+      },
+      {
+        title: 'The content',
+        body: 'The cards are written carefully but may contain mistakes: they are meant for studying, not as official documentation. You can report a mistake by email.',
+      },
+      {
+        title: 'Contact',
+        body: 'For any question or request about your data: heavenlucagabriel@gmail.com',
+      },
+    ],
   },
   signup: {
     title: 'Create your account',
