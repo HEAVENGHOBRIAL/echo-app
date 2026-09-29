@@ -13,6 +13,8 @@ export function validateEmail(email: string, t: Dict): string | null {
 export function validatePassword(password: string, t: Dict): string | null {
   if (!password) return t.validation.passwordEmpty;
   if (password.length < MIN_PASSWORD_LENGTH) return t.validation.passwordShort(MIN_PASSWORD_LENGTH);
+  // Même règle que Supabase (Auth → Email → Password requirements : « Letters and digits »)
+  if (!/[a-zA-Z]/.test(password) || !/\d/.test(password)) return t.validation.passwordLettersDigits;
   return null;
 }
 

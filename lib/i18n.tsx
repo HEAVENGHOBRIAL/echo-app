@@ -45,6 +45,7 @@ const fr = {
     emailInvalid: 'Cette adresse email n’a pas l’air valide (ex : prenom@exemple.fr).',
     passwordEmpty: 'Entre ton mot de passe.',
     passwordShort: (n: number) => `Ton mot de passe doit faire au moins ${n} caractères.`,
+    passwordLettersDigits: 'Ton mot de passe doit contenir au moins une lettre et un chiffre.',
     firstNameEmpty: 'Entre ton prénom.',
   },
   onboarding: {
@@ -156,7 +157,7 @@ const fr = {
     title: 'Crée ton compte',
     subtitle: 'Ta progression sera sauvegardée sur tous tes appareils.',
     firstName: 'Prénom',
-    passwordPh: (n: number) => `${n} caractères minimum`,
+    passwordPh: (n: number) => `${n} caractères, avec lettres et chiffres`,
     terms: 'J’accepte les conditions d’utilisation',
     termsError: 'Accepte les conditions d’utilisation pour continuer.',
     submit: 'Créer mon compte',
@@ -477,6 +478,7 @@ const en: Dict = {
     emailInvalid: 'This email address doesn’t look valid (e.g. name@example.com).',
     passwordEmpty: 'Enter your password.',
     passwordShort: (n) => `Your password must be at least ${n} characters long.`,
+    passwordLettersDigits: 'Your password must contain at least one letter and one digit.',
     firstNameEmpty: 'Enter your first name.',
   },
   onboarding: {
@@ -588,7 +590,7 @@ const en: Dict = {
     title: 'Create your account',
     subtitle: 'Your progress will be saved across all your devices.',
     firstName: 'First name',
-    passwordPh: (n) => `At least ${n} characters`,
+    passwordPh: (n) => `At least ${n} characters, letters and digits`,
     terms: 'I accept the terms of use',
     termsError: 'Accept the terms of use to continue.',
     submit: 'Create my account',
