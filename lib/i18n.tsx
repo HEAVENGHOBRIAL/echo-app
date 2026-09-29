@@ -129,7 +129,7 @@ const fr = {
     sections: [
       {
         title: 'Le service',
-        body: 'Echo est une application gratuite de révision pour apprendre les bases du développement web (PHP, SQL, HTML, CSS, JavaScript, React) avec des flashcards. Elle a été réalisée dans le cadre d’un projet étudiant (BUT MMI).',
+        body: 'Echo est une application gratuite de révision pour apprendre les bases du développement web (PHP, SQL, HTML, CSS, JavaScript, React) avec des flashcards. C’est un projet personnel, développé et maintenu par Heaven Ghobrial.',
       },
       {
         title: 'Ton compte',
@@ -562,7 +562,7 @@ const en: Dict = {
     sections: [
       {
         title: 'The service',
-        body: 'Echo is a free study app to learn the basics of web development (PHP, SQL, HTML, CSS, JavaScript, React) with flashcards. It was made as a student project (BUT MMI).',
+        body: 'Echo is a free study app to learn the basics of web development (PHP, SQL, HTML, CSS, JavaScript, React) with flashcards. It is a personal project, built and maintained by Heaven Ghobrial.',
       },
       {
         title: 'Your account',
