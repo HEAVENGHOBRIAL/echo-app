@@ -117,7 +117,7 @@ const fr = {
     samePassword: 'Choisis un mot de passe différent de l’ancien.',
     submit: 'Enregistrer',
     doneTitle: 'Mot de passe modifié',
-    doneMsg: 'C’est tout bon, tu es connectée avec ton nouveau mot de passe.',
+    doneMsg: 'C’est tout bon, ton nouveau mot de passe est enregistré.',
     goHome: 'Aller à l’accueil',
     failTitle: 'Modification impossible',
   },
@@ -176,7 +176,7 @@ const fr = {
   },
   home: {
     hello: (name: string) => (name ? `Salut, ${name}` : 'Salut !'),
-    ready: 'Prête pour ta révision ?',
+    ready: 'On révise aujourd’hui ?',
     openProfile: 'Ouvrir mon profil',
     streakLabel: 'SÉRIE EN COURS',
     days: (n: number) => `${n} jour${s(n)}`,
@@ -435,7 +435,7 @@ const fr = {
     backHome: 'Retour à l’accueil',
   },
   confirm: {
-    sure: 'Tu es sûre ?',
+    sure: 'Confirmer la suppression ?',
     definitive: 'Cette action est définitive.',
     cancel: 'Annuler',
     delete: 'Supprimer',
