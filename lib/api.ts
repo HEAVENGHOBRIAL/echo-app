@@ -80,12 +80,13 @@ async function getChallengeLevelIds(): Promise<number[]> {
 }
 
 // Règle de progression : un deck est ouvert si c'est le 1er du parcours,
-// si le deck juste avant est terminé (défi final réussi), ou si c'est le deck démo.
+// si le deck juste avant est terminé (défi final réussi), si c'est le deck démo,
+// ou s'il est lui-même déjà terminé (un deck réussi ne se re-verrouille jamais).
 export function computeUnlocked(decks: Deck[], completed: Set<number>) {
   const sorted = [...decks].sort((a, b) => a.level_number - b.level_number);
   const unlocked = new Set<number>();
   sorted.forEach((deck, i) => {
-    if (i === 0 || deck.is_demo || completed.has(sorted[i - 1].id)) unlocked.add(deck.id);
+    if (i === 0 || deck.is_demo || completed.has(deck.id) || completed.has(sorted[i - 1].id)) unlocked.add(deck.id);
   });
   return unlocked;
 }
