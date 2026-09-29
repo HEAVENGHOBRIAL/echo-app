@@ -1,0 +1,8 @@
+# Fichiers qui ne partent pas sur Vercel (Vercel réinstalle et reconstruit tout)
+node_modules
+dist
+.expo
+.env
+.env*.local
+.claude
+supabase
