@@ -20,12 +20,19 @@ type FormAlert = { title: string; message: string; type: 'error' | 'info' };
 export default function Login() {
   const styles = useStyles();
   const t = useT();
-  const params = useLocalSearchParams<{ email?: string }>();
+  const params = useLocalSearchParams<{ email?: string; linkError?: string }>();
   const [email, setEmail] = useState(params.email ?? '');
   const [password, setPassword] = useState('');
   const [emailError, setEmailError] = useState<string | null>(null);
   const [passwordError, setPasswordError] = useState<string | null>(null);
-  const [alert, setAlert] = useState<FormAlert | null>(null);
+  // Arrivée depuis un lien email qui n'a pas marché (voir app/_layout.tsx)
+  const [alert, setAlert] = useState<FormAlert | null>(() =>
+    !params.linkError
+      ? null
+      : params.linkError === 'otp_expired'
+        ? { type: 'info', title: t.login.linkExpiredTitle, message: t.login.linkExpiredMsg }
+        : { type: 'error', title: t.login.linkErrorTitle, message: t.login.linkErrorMsg },
+  );
   const [loading, setLoading] = useState(false);
 
   const emailRef = useRef<TextInput>(null);

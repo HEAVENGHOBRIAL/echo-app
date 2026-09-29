@@ -2,10 +2,11 @@ import { DMSans_400Regular, DMSans_500Medium, DMSans_600SemiBold } from '@expo-g
 import { JetBrainsMono_400Regular } from '@expo-google-fonts/jetbrains-mono';
 import { SpaceGrotesk_700Bold } from '@expo-google-fonts/space-grotesk';
 import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
+import { router, Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
 import { useEffect } from 'react';
+import { Platform } from 'react-native';
 import { AuthProvider, useAuth } from '@/lib/auth';
 import { LanguageProvider } from '@/lib/i18n';
 import { NetworkProvider } from '@/lib/network';
@@ -45,6 +46,18 @@ function RootNavigator() {
   useEffect(() => {
     if (!loading) SplashScreen.hideAsync().catch(() => {});
   }, [loading]);
+
+  // Web : un lien email (confirmation, mot de passe) peut revenir avec une erreur dans l'URL,
+  // ex : #error=access_denied&error_code=otp_expired (lien déjà utilisé ou expiré).
+  // On l'explique sur l'écran de connexion au lieu d'afficher une page vide.
+  useEffect(() => {
+    if (loading || Platform.OS !== 'web' || typeof window === 'undefined') return;
+    const raw = window.location.hash.slice(1) || window.location.search.slice(1);
+    const code = new URLSearchParams(raw).get('error_code') ?? new URLSearchParams(raw).get('error');
+    if (!code) return;
+    window.history.replaceState(null, '', window.location.pathname);
+    if (!session) router.replace({ pathname: '/login', params: { linkError: code } });
+  }, [loading, session]);
 
   if (loading) return null;
 

@@ -91,6 +91,11 @@ const fr = {
     checkPassword: 'Vérifie ton mot de passe.',
     notConfirmedTitle: 'Email pas encore confirmé',
     notConfirmedMsg: 'Ouvre le lien reçu par email pour activer ton compte, puis reconnecte-toi.',
+    linkExpiredTitle: 'Lien expiré ou déjà utilisé',
+    linkExpiredMsg:
+      'Ce lien ne marche qu’une fois. Si tu as déjà cliqué dessus, ton compte est confirmé : connecte-toi simplement. Sinon, demande un nouveau lien.',
+    linkErrorTitle: 'Le lien n’a pas fonctionné',
+    linkErrorMsg: 'Essaie de te connecter. Si ça ne marche pas, inscris-toi à nouveau ou utilise « Mot de passe oublié ».',
   },
   forgot: {
     title: 'Mot de passe oublié',
@@ -518,6 +523,11 @@ const en: Dict = {
     checkPassword: 'Check your password.',
     notConfirmedTitle: 'Email not confirmed yet',
     notConfirmedMsg: 'Open the link we emailed you to activate your account, then sign in again.',
+    linkExpiredTitle: 'Link expired or already used',
+    linkExpiredMsg:
+      'This link only works once. If you already clicked it, your account is confirmed: just sign in. Otherwise, ask for a new link.',
+    linkErrorTitle: 'The link didn’t work',
+    linkErrorMsg: 'Try signing in. If that doesn’t work, sign up again or use “Forgot password”.',
   },
   forgot: {
     title: 'Forgot password',
