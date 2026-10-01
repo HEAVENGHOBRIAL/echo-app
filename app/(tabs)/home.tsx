@@ -1,4 +1,4 @@
-// Écrans 06 · Accueil (connectée) et 07 · Accueil (invitée) — Figma nodes 8:54 et 8:131
+// Accueil : version connectée et version invitée
 import { router } from 'expo-router';
 import { Pressable, Text, View } from 'react-native';
 import { Alert } from '@/components/Alert';

@@ -1,4 +1,4 @@
-// Écrans 11 · Résultats et 12 · Sauvegarder (invitée) — Figma nodes 9:243 et 9:275
+// Résultats de fin de session (+ sauvegarde en mode invité)
 import { Redirect, router } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';

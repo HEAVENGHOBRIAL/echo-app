@@ -1,4 +1,4 @@
-// Écran 08 · Parcours (ex : Frontend) — Figma node 8:206
+// Page d’un parcours (ex : Frontend) et ses decks
 // Chaque deck se termine par un défi final ; le réussir débloque le deck suivant.
 import { router, useLocalSearchParams } from 'expo-router';
 import { Pressable, Text, View } from 'react-native';

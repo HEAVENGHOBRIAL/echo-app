@@ -1,4 +1,4 @@
-// Icônes de la barre de navigation, reprises du Figma (Icon/Accueil, Parcours, Stats, Profil).
+// Icônes de la barre de navigation (Accueil, Parcours, Stats, Profil)
 import Svg, { Circle, Path, Rect } from 'react-native-svg';
 
 type IconProps = { color: string };

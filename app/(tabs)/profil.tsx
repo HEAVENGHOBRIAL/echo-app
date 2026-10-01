@@ -1,4 +1,4 @@
-// Onglet Profil (pas de maquette Figma : même style que le reste de l'app)
+// Onglet Profil
 import { router } from 'expo-router';
 import { useEffect, useState } from 'react';
 import { Text, View } from 'react-native';

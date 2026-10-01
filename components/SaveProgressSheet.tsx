@@ -1,4 +1,4 @@
-// Bottom sheet "Sauvegarde ta progression" (écran 12, mode invité)
+// Bottom sheet "Sauvegarde ta progression" (mode invité)
 import { Modal, Pressable, StyleSheet, Text, View } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { Button } from '@/components/Button';
