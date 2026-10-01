@@ -44,5 +44,5 @@ yarn-error.*
 # Vercel (lien local vers le projet)
 .vercel
 
-.vercel
-.env*
+# Claude Code
+.claude/
