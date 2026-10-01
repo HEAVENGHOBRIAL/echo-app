@@ -1,4 +1,4 @@
-// Écran 01 · Onboarding (Figma node 7:3)
+// Onboarding : 3 écrans de présentation
 import { router } from 'expo-router';
 import { useState } from 'react';
 import { Pressable, Text, useWindowDimensions, View } from 'react-native';
@@ -226,7 +226,7 @@ const useStyles = makeStyles((c) => ({
   footer: { flexDirection: 'row', flexWrap: 'wrap', justifyContent: 'center', alignItems: 'center', columnGap: spacing.xs },
   footerText: { ...typography.body, color: c.text.secondary },
 
-  // Illustration : zone de 342 × 300 comme dans le Figma, centrée dans le bloc menthe
+  // Illustration : zone de 342 × 300, centrée dans le bloc menthe
   illustration: {
     height: 300,
     width: '100%',

@@ -1,4 +1,4 @@
-// Écrans 02 · Connexion et 03 · Connexion — erreur (Figma nodes 7:28 et 7:55)
+// Connexion
 import { router, useLocalSearchParams } from 'expo-router';
 import { useRef, useState } from 'react';
 import { Text, TextInput, View } from 'react-native';

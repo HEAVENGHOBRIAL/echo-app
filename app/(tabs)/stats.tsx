@@ -1,4 +1,4 @@
-// Onglet Stats (pas de maquette Figma : même style que le reste de l'app)
+// Onglet Stats
 import { router } from 'expo-router';
 import { Text, View } from 'react-native';
 import { Alert } from '@/components/Alert';

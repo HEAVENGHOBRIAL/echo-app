@@ -1,4 +1,4 @@
-// Écrans 09 · Révision recto, 10 · verso et 13 · hors ligne — Figma nodes 9:200, 9:218, 9:333
+// Révision : recto, verso et mode hors ligne
 //
 // Paramètres possibles :
 //   /review?level=6                → toutes les cartes d'un deck

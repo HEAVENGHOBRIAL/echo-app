@@ -15,12 +15,35 @@ type AuthState = {
 
 const AuthContext = createContext<AuthState | null>(null);
 
+// Web : on garde le mode invité pendant la session de l'onglet, pour qu'un rafraîchissement
+// ne renvoie pas à l'onboarding. sessionStorage s'efface quand on ferme l'onglet.
+const GUEST_KEY = 'echo-guest';
+function readGuestFlag() {
+  try {
+    return typeof sessionStorage !== 'undefined' && sessionStorage.getItem(GUEST_KEY) === '1';
+  } catch {
+    return false;
+  }
+}
+function writeGuestFlag(value: boolean) {
+  try {
+    if (typeof sessionStorage === 'undefined') return;
+    if (value) sessionStorage.setItem(GUEST_KEY, '1');
+    else sessionStorage.removeItem(GUEST_KEY);
+  } catch {}
+}
+
 // Donne à toute l'app : la session Supabase + le mode invité.
-// Le mode invité n'est gardé qu'en mémoire : si on ferme l'app, on repart de zéro.
+// Le mode invité ne sauvegarde rien : si on ferme l'app, on repart de zéro.
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<Session | null>(null);
-  const [isGuest, setIsGuest] = useState(false);
+  const [isGuest, setIsGuestState] = useState(readGuestFlag);
   const [loading, setLoading] = useState(true);
+
+  function setIsGuest(value: boolean) {
+    writeGuestFlag(value);
+    setIsGuestState(value);
+  }
 
   useEffect(() => {
     // 1. Au lancement : session déjà enregistrée ?

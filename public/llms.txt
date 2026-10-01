@@ -1,0 +1,10 @@
+# Echo
+
+> Application de flashcards pour réviser le développement web : PHP, SQL, HTML, CSS, JavaScript et React.
+
+Echo propose 3 parcours (Backend, Frontend, JS / React) découpés en niveaux. Chaque carte présente une notion avec un exemple de code. Un quiz permet de passer au niveau suivant. L'app fonctionne sans compte (mode invité) ou avec un compte pour sauvegarder la progression.
+
+## Liens
+
+- [Application](https://echo-app-flame.vercel.app/)
+- [Code source](https://github.com/HEAVENGHOBRIAL/echo-app)

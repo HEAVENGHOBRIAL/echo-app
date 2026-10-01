@@ -1,4 +1,4 @@
-// Écrans 04 · Inscription et 05 · Inscription — erreur (Figma nodes 7:88 et 7:120)
+// Inscription
 import { router } from 'expo-router';
 import { useRef, useState } from 'react';
 import { Text, TextInput, View } from 'react-native';
