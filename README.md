@@ -10,6 +10,8 @@ Application de flashcards pour réviser le développement web : PHP, SQL, HTML, 
 
 ![Echo](assets/readme/cover.png)
 
+**Français** · [English](README.en.md)
+
 </div>
 
 ---
